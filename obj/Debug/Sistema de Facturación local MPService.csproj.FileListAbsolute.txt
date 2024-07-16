@@ -1,0 +1,22 @@
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\Sistema de Facturación local MPService.exe.config
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\Sistema de Facturación local MPService.exe
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\Sistema de Facturación local MPService.pdb
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\EntityFramework.dll
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\System.Data.SQLite.dll
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\EntityFramework.xml
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\bin\Debug\System.Data.SQLite.xml
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.csproj.AssemblyReference.cache
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.csproj.SuggestedBindingRedirects.cache
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema_de_Facturación_local_MPService.Properties.Resources.resources
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.csproj.GenerateResource.cache
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.csproj.CoreCompileInputs.cache
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.csproj.CopyComplete
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.exe
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema de Facturación local MPService.pdb
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema_de_Facturación_local_MPService.AddClientForm.resources
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema_de_Facturación_local_MPService.MainForm.resources
+C:\Users\Asus\OneDrive\Datos adjuntos\Documentos\Portafolio\Facturación MP\obj\Debug\Sistema_de_Facturación_local_MPService.BorrarCliente.resources

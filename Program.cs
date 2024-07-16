@@ -16,7 +16,7 @@ namespace Sistema_de_Facturación_local_MPService
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
