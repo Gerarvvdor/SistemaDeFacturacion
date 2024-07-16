@@ -212,6 +212,7 @@
             this.Controls.Add(this.clientTextbox);
             this.Name = "AddClientForm";
             this.Text = "Nuevo cliente";
+            this.Load += new System.EventHandler(this.AddClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

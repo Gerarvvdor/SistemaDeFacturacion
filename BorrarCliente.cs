@@ -14,6 +14,7 @@ namespace Sistema_de_Facturación_local_MPService
         public BorrarCliente()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             // Inicializa la conexión a la base de datos SQLite
             MPdbconnection = new SQLiteConnection("Data Source=C:\\Users\\Asus\\OneDrive\\Datos adjuntos\\Documentos\\Portafolio\\MPS_DB.db;Version=3;");
         }
@@ -21,6 +22,7 @@ namespace Sistema_de_Facturación_local_MPService
         private void BorrarCliente_Load(object sender, EventArgs e)
         {
             loadDatafromDB();
+           
         }
 
         private void loadDatafromDB()
@@ -93,6 +95,16 @@ namespace Sistema_de_Facturación_local_MPService
             {
                 MessageBox.Show("Selecciona una fila para eliminar.");
             }
+        }
+
+        private void deleteClientButton_Click(object sender, EventArgs e)
+        {
+            // Mostrar el formulario MainForm nuevamente
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+
+            // Cerrar el formulario actual
+            this.Close();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnEliminarClick = new System.Windows.Forms.Button();
+            this.deleteClientButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,22 @@
             this.BtnEliminarClick.UseVisualStyleBackColor = true;
             this.BtnEliminarClick.Click += new System.EventHandler(this.BtnEliminarClick_Click);
             // 
+            // deleteClientButton
+            // 
+            this.deleteClientButton.Location = new System.Drawing.Point(173, 12);
+            this.deleteClientButton.Name = "deleteClientButton";
+            this.deleteClientButton.Size = new System.Drawing.Size(155, 48);
+            this.deleteClientButton.TabIndex = 2;
+            this.deleteClientButton.Text = "Regresar";
+            this.deleteClientButton.UseVisualStyleBackColor = true;
+            this.deleteClientButton.Click += new System.EventHandler(this.deleteClientButton_Click);
+            // 
             // BorrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 1055);
+            this.Controls.Add(this.deleteClientButton);
             this.Controls.Add(this.BtnEliminarClick);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BorrarCliente";
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnEliminarClick;
+        private System.Windows.Forms.Button deleteClientButton;
     }
 }
