@@ -63,6 +63,16 @@ namespace Sistema_de_Facturación_local_MPService.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SCN_0002 {
+            get {
+                object obj = ResourceManager.GetObject("SCN_0002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SCN_0003 {
             get {
                 object obj = ResourceManager.GetObject("SCN_0003", resourceCulture);

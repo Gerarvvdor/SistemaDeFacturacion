@@ -7,44 +7,12 @@ namespace Sistema_de_Facturación_local_MPService
 {
     public partial class MainForm : Form
     {
-        private SQLiteConnection MPdbconnection;
-        private SQLiteDataAdapter MPdataAdapter;
-        private DataTable ClientNameTable;
-
         public MainForm()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            MPdbconnection = new SQLiteConnection("Data Source=C:\\Users\\Asus\\OneDrive\\Datos adjuntos\\Documentos\\Portafolio\\MPS_DB.db;Version=3;");
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-        
-            
-            try
-            {
-                MPdbconnection.Open();
-
-                string query = "SELECT Cliente FROM Clientes";
-                MPdataAdapter = new SQLiteDataAdapter(query, MPdbconnection);
-                ClientNameTable = new DataTable();
-
-                MPdataAdapter.Fill(ClientNameTable);
-
-                clientNameCmbx.DisplayMember = "Cliente"; 
-                clientNameCmbx.DataSource = ClientNameTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los datos de la base de datos: " + ex.Message);
-            }
-            finally
-            {
-                MPdbconnection.Close();
-            }
-        }
-
         private void newClientButton_Click(object sender, EventArgs e)
         {
             AddClientForm myNuevoCliente = new AddClientForm();
@@ -56,6 +24,20 @@ namespace Sistema_de_Facturación_local_MPService
         {
             BorrarCliente myborrarCliente = new BorrarCliente();
             myborrarCliente.Show();
+            this.Hide();
+        }
+
+        private void fiscalCreditButton_Click(object sender, EventArgs e)
+        {
+            CreditoFiscal myCreditoFiscal = new CreditoFiscal();
+            myCreditoFiscal.Show();
+            this.Hide();
+        }
+
+        private void billButton_Click(object sender, EventArgs e)
+        {
+            Factura myFactura = new Factura();
+            myFactura.Show();
             this.Hide();
         }
     }

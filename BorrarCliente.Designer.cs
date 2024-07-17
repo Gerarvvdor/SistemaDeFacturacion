@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrarCliente));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnEliminarClick = new System.Windows.Forms.Button();
             this.deleteClientButton = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
             this.Controls.Add(this.deleteClientButton);
             this.Controls.Add(this.BtnEliminarClick);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BorrarCliente";
             this.Text = "BorrarCliente";
             this.Load += new System.EventHandler(this.BorrarCliente_Load);
