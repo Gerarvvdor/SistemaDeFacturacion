@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite; // Asegúrate de tener esta biblioteca
+using System.Data.SQLite; 
 
 namespace Sistema_de_Facturación_local_MPService
 {

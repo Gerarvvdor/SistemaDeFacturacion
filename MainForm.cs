@@ -12,6 +12,7 @@ namespace Sistema_de_Facturación_local_MPService
             InitializeComponent();
 
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += new FormClosingEventHandler(CreditoFiscal_FormClosing);
         }
         private void newClientButton_Click(object sender, EventArgs e)
         {
@@ -39,6 +40,26 @@ namespace Sistema_de_Facturación_local_MPService
             Factura myFactura = new Factura();
             myFactura.Show();
             this.Hide();
+        }
+
+        private void CreditoFiscal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=C:\\Users\\Asus\\OneDrive\\Datos adjuntos\\Documentos\\Portafolio\\MPS_DB.db;Version=3;"))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM Productos";
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al limpiar la tabla de productos: " + ex.Message);
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.fiscalCreditCancelButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BillClientNameLabel = new System.Windows.Forms.Label();
@@ -39,19 +40,35 @@
             this.BillDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.BillDateFactureLabelPicker = new System.Windows.Forms.Label();
             this.BillClientNameCmbx = new System.Windows.Forms.ComboBox();
-            this.FCDepartmentLabell = new System.Windows.Forms.Label();
-            this.FCClientLabel = new System.Windows.Forms.Label();
-            this.FCMunicipioLabel = new System.Windows.Forms.Label();
-            this.FCRegisterLabel = new System.Windows.Forms.Label();
-            this.FCPayConditions = new System.Windows.Forms.Label();
-            this.FCDateLabel = new System.Windows.Forms.Label();
-            this.FCNITclient = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.BillDepartmentLabell = new System.Windows.Forms.Label();
+            this.BillClientLabel = new System.Windows.Forms.Label();
+            this.BillMunicipioLabel = new System.Windows.Forms.Label();
+            this.BillRegisterLabel = new System.Windows.Forms.Label();
+            this.BillPayConditions = new System.Windows.Forms.Label();
+            this.BillDateLabel = new System.Windows.Forms.Label();
+            this.BillNITclient = new System.Windows.Forms.Label();
+            this.BillVtasNoSujetas = new System.Windows.Forms.Label();
+            this.BillVtasTotal = new System.Windows.Forms.Label();
+            this.BillSumas = new System.Windows.Forms.Label();
+            this.BillVtasExentas = new System.Windows.Forms.Label();
+            this.BillIVARetenido = new System.Windows.Forms.Label();
+            this.billTableProducts = new System.Windows.Forms.TableLayoutPanel();
+            this.BillDescripcionTextbox = new System.Windows.Forms.TextBox();
+            this.BillVentasExentasTextBox = new System.Windows.Forms.TextBox();
+            this.TittleDescripcion = new System.Windows.Forms.Label();
+            this.TittleVentasExentasLabel = new System.Windows.Forms.Label();
+            this.ventasNoSujetasLabel = new System.Windows.Forms.Label();
+            this.BillVtasNoSujetasTextBox = new System.Windows.Forms.TextBox();
+            this.BillUnitPriceTextbox = new System.Windows.Forms.TextBox();
+            this.pUnitLabel = new System.Windows.Forms.Label();
+            this.billCantTextbox = new System.Windows.Forms.TextBox();
+            this.tittleCantLabel = new System.Windows.Forms.Label();
+            this.bigBuyerRadioButton = new System.Windows.Forms.RadioButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fiscalCreditCancelButton
@@ -67,7 +84,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema_de_Facturación_local_MPService.Properties.Resources.SCN_0002;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(816, 1056);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,7 +95,7 @@
             // 
             this.BillClientNameLabel.AutoSize = true;
             this.BillClientNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.BillClientNameLabel.Location = new System.Drawing.Point(843, 38);
+            this.BillClientNameLabel.Location = new System.Drawing.Point(832, 61);
             this.BillClientNameLabel.Name = "BillClientNameLabel";
             this.BillClientNameLabel.Size = new System.Drawing.Size(48, 16);
             this.BillClientNameLabel.TabIndex = 53;
@@ -86,34 +103,37 @@
             // 
             // BilldeleteRowButton
             // 
-            this.BilldeleteRowButton.Location = new System.Drawing.Point(846, 290);
+            this.BilldeleteRowButton.Location = new System.Drawing.Point(974, 633);
             this.BilldeleteRowButton.Name = "BilldeleteRowButton";
             this.BilldeleteRowButton.Size = new System.Drawing.Size(133, 31);
             this.BilldeleteRowButton.TabIndex = 52;
             this.BilldeleteRowButton.Text = "Borrar fila";
             this.BilldeleteRowButton.UseVisualStyleBackColor = true;
+            this.BilldeleteRowButton.Click += new System.EventHandler(this.BilldeleteRowButton_Click);
             // 
             // BilladdRowButton
             // 
-            this.BilladdRowButton.Location = new System.Drawing.Point(846, 253);
+            this.BilladdRowButton.Location = new System.Drawing.Point(835, 633);
             this.BilladdRowButton.Name = "BilladdRowButton";
             this.BilladdRowButton.Size = new System.Drawing.Size(133, 31);
             this.BilladdRowButton.TabIndex = 51;
             this.BilladdRowButton.Text = "Añadir fila";
             this.BilladdRowButton.UseVisualStyleBackColor = true;
+            this.BilladdRowButton.Click += new System.EventHandler(this.BilladdRowButton_Click_1);
             // 
             // BillprintBillButton
             // 
-            this.BillprintBillButton.Location = new System.Drawing.Point(846, 346);
+            this.BillprintBillButton.Location = new System.Drawing.Point(1098, 8);
             this.BillprintBillButton.Name = "BillprintBillButton";
             this.BillprintBillButton.Size = new System.Drawing.Size(133, 46);
             this.BillprintBillButton.TabIndex = 50;
             this.BillprintBillButton.Text = "Imprimir";
             this.BillprintBillButton.UseVisualStyleBackColor = true;
+            this.BillprintBillButton.Click += new System.EventHandler(this.BillprintBillButton_Click);
             // 
             // BillPaymentCondition
             // 
-            this.BillPaymentCondition.Location = new System.Drawing.Point(840, 190);
+            this.BillPaymentCondition.Location = new System.Drawing.Point(835, 270);
             this.BillPaymentCondition.Name = "BillPaymentCondition";
             this.BillPaymentCondition.Size = new System.Drawing.Size(398, 22);
             this.BillPaymentCondition.TabIndex = 49;
@@ -122,7 +142,7 @@
             // 
             this.BillPaymentoCondition.AutoSize = true;
             this.BillPaymentoCondition.BackColor = System.Drawing.Color.Transparent;
-            this.BillPaymentoCondition.Location = new System.Drawing.Point(840, 171);
+            this.BillPaymentoCondition.Location = new System.Drawing.Point(832, 251);
             this.BillPaymentoCondition.Name = "BillPaymentoCondition";
             this.BillPaymentoCondition.Size = new System.Drawing.Size(121, 16);
             this.BillPaymentoCondition.TabIndex = 48;
@@ -130,7 +150,7 @@
             // 
             // BillDateTimePicker
             // 
-            this.BillDateTimePicker.Location = new System.Drawing.Point(840, 124);
+            this.BillDateTimePicker.Location = new System.Drawing.Point(835, 204);
             this.BillDateTimePicker.Name = "BillDateTimePicker";
             this.BillDateTimePicker.Size = new System.Drawing.Size(263, 22);
             this.BillDateTimePicker.TabIndex = 47;
@@ -139,7 +159,7 @@
             // 
             this.BillDateFactureLabelPicker.AutoSize = true;
             this.BillDateFactureLabelPicker.BackColor = System.Drawing.Color.Transparent;
-            this.BillDateFactureLabelPicker.Location = new System.Drawing.Point(843, 105);
+            this.BillDateFactureLabelPicker.Location = new System.Drawing.Point(832, 185);
             this.BillDateFactureLabelPicker.Name = "BillDateFactureLabelPicker";
             this.BillDateFactureLabelPicker.Size = new System.Drawing.Size(121, 16);
             this.BillDateFactureLabelPicker.TabIndex = 46;
@@ -148,148 +168,296 @@
             // BillClientNameCmbx
             // 
             this.BillClientNameCmbx.FormattingEnabled = true;
-            this.BillClientNameCmbx.Location = new System.Drawing.Point(840, 64);
+            this.BillClientNameCmbx.Location = new System.Drawing.Point(835, 80);
             this.BillClientNameCmbx.Name = "BillClientNameCmbx";
             this.BillClientNameCmbx.Size = new System.Drawing.Size(398, 24);
             this.BillClientNameCmbx.TabIndex = 45;
             // 
-            // FCDepartmentLabell
+            // BillDepartmentLabell
             // 
-            this.FCDepartmentLabell.AutoSize = true;
-            this.FCDepartmentLabell.BackColor = System.Drawing.Color.Transparent;
-            this.FCDepartmentLabell.Location = new System.Drawing.Point(120, 274);
-            this.FCDepartmentLabell.Name = "FCDepartmentLabell";
-            this.FCDepartmentLabell.Size = new System.Drawing.Size(93, 16);
-            this.FCDepartmentLabell.TabIndex = 62;
-            this.FCDepartmentLabell.Text = "Departamento";
+            this.BillDepartmentLabell.AutoSize = true;
+            this.BillDepartmentLabell.BackColor = System.Drawing.Color.Transparent;
+            this.BillDepartmentLabell.Location = new System.Drawing.Point(101, 212);
+            this.BillDepartmentLabell.Name = "BillDepartmentLabell";
+            this.BillDepartmentLabell.Size = new System.Drawing.Size(93, 16);
+            this.BillDepartmentLabell.TabIndex = 62;
+            this.BillDepartmentLabell.Text = "Departamento";
             // 
-            // FCClientLabel
+            // BillClientLabel
             // 
-            this.FCClientLabel.AutoSize = true;
-            this.FCClientLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FCClientLabel.Location = new System.Drawing.Point(77, 211);
-            this.FCClientLabel.Name = "FCClientLabel";
-            this.FCClientLabel.Size = new System.Drawing.Size(48, 16);
-            this.FCClientLabel.TabIndex = 61;
-            this.FCClientLabel.Text = "Cliente";
+            this.BillClientLabel.AutoSize = true;
+            this.BillClientLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BillClientLabel.Location = new System.Drawing.Point(61, 151);
+            this.BillClientLabel.Name = "BillClientLabel";
+            this.BillClientLabel.Size = new System.Drawing.Size(48, 16);
+            this.BillClientLabel.TabIndex = 61;
+            this.BillClientLabel.Text = "Cliente";
             // 
-            // FCMunicipioLabel
+            // BillMunicipioLabel
             // 
-            this.FCMunicipioLabel.AutoSize = true;
-            this.FCMunicipioLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FCMunicipioLabel.Location = new System.Drawing.Point(87, 259);
-            this.FCMunicipioLabel.Name = "FCMunicipioLabel";
-            this.FCMunicipioLabel.Size = new System.Drawing.Size(64, 16);
-            this.FCMunicipioLabel.TabIndex = 60;
-            this.FCMunicipioLabel.Text = "Municipio";
+            this.BillMunicipioLabel.AutoSize = true;
+            this.BillMunicipioLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BillMunicipioLabel.Location = new System.Drawing.Point(73, 197);
+            this.BillMunicipioLabel.Name = "BillMunicipioLabel";
+            this.BillMunicipioLabel.Size = new System.Drawing.Size(64, 16);
+            this.BillMunicipioLabel.TabIndex = 60;
+            this.BillMunicipioLabel.Text = "Municipio";
             // 
-            // FCRegisterLabel
+            // BillRegisterLabel
             // 
-            this.FCRegisterLabel.AutoSize = true;
-            this.FCRegisterLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FCRegisterLabel.Location = new System.Drawing.Point(90, 227);
-            this.FCRegisterLabel.Name = "FCRegisterLabel";
-            this.FCRegisterLabel.Size = new System.Drawing.Size(58, 16);
-            this.FCRegisterLabel.TabIndex = 59;
-            this.FCRegisterLabel.Text = "Registro";
+            this.BillRegisterLabel.AutoSize = true;
+            this.BillRegisterLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BillRegisterLabel.Location = new System.Drawing.Point(78, 167);
+            this.BillRegisterLabel.Name = "BillRegisterLabel";
+            this.BillRegisterLabel.Size = new System.Drawing.Size(58, 16);
+            this.BillRegisterLabel.TabIndex = 59;
+            this.BillRegisterLabel.Text = "Registro";
             // 
-            // FCPayConditions
+            // BillPayConditions
             // 
-            this.FCPayConditions.AutoSize = true;
-            this.FCPayConditions.BackColor = System.Drawing.Color.Transparent;
-            this.FCPayConditions.Location = new System.Drawing.Point(679, 274);
-            this.FCPayConditions.Name = "FCPayConditions";
-            this.FCPayConditions.Size = new System.Drawing.Size(121, 16);
-            this.FCPayConditions.TabIndex = 58;
-            this.FCPayConditions.Text = "Condición de pago";
+            this.BillPayConditions.AutoSize = true;
+            this.BillPayConditions.BackColor = System.Drawing.Color.Transparent;
+            this.BillPayConditions.Location = new System.Drawing.Point(664, 210);
+            this.BillPayConditions.Name = "BillPayConditions";
+            this.BillPayConditions.Size = new System.Drawing.Size(121, 16);
+            this.BillPayConditions.TabIndex = 58;
+            this.BillPayConditions.Text = "Condición de pago";
             // 
-            // FCDateLabel
+            // BillDateLabel
             // 
-            this.FCDateLabel.AutoSize = true;
-            this.FCDateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FCDateLabel.Location = new System.Drawing.Point(598, 211);
-            this.FCDateLabel.Name = "FCDateLabel";
-            this.FCDateLabel.Size = new System.Drawing.Size(45, 16);
-            this.FCDateLabel.TabIndex = 57;
-            this.FCDateLabel.Text = "Fecha";
+            this.BillDateLabel.AutoSize = true;
+            this.BillDateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BillDateLabel.Location = new System.Drawing.Point(582, 149);
+            this.BillDateLabel.Name = "BillDateLabel";
+            this.BillDateLabel.Size = new System.Drawing.Size(45, 16);
+            this.BillDateLabel.TabIndex = 57;
+            this.BillDateLabel.Text = "Fecha";
             // 
-            // FCNITclient
+            // BillNITclient
             // 
-            this.FCNITclient.AutoSize = true;
-            this.FCNITclient.BackColor = System.Drawing.Color.Transparent;
-            this.FCNITclient.Location = new System.Drawing.Point(578, 259);
-            this.FCNITclient.Name = "FCNITclient";
-            this.FCNITclient.Size = new System.Drawing.Size(29, 16);
-            this.FCNITclient.TabIndex = 56;
-            this.FCNITclient.Text = "NIT";
+            this.BillNITclient.AutoSize = true;
+            this.BillNITclient.BackColor = System.Drawing.Color.Transparent;
+            this.BillNITclient.Location = new System.Drawing.Point(566, 195);
+            this.BillNITclient.Name = "BillNITclient";
+            this.BillNITclient.Size = new System.Drawing.Size(29, 16);
+            this.BillNITclient.TabIndex = 56;
+            this.BillNITclient.Text = "NIT";
             // 
-            // label1
+            // BillVtasNoSujetas
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(721, 793);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 16);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Departamento";
+            this.BillVtasNoSujetas.AutoSize = true;
+            this.BillVtasNoSujetas.BackColor = System.Drawing.Color.Transparent;
+            this.BillVtasNoSujetas.Location = new System.Drawing.Point(753, 729);
+            this.BillVtasNoSujetas.Name = "BillVtasNoSujetas";
+            this.BillVtasNoSujetas.Size = new System.Drawing.Size(14, 16);
+            this.BillVtasNoSujetas.TabIndex = 69;
+            this.BillVtasNoSujetas.Text = "0";
             // 
-            // label3
+            // BillVtasTotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(739, 825);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "Cliente";
+            this.BillVtasTotal.AutoSize = true;
+            this.BillVtasTotal.BackColor = System.Drawing.Color.Transparent;
+            this.BillVtasTotal.Location = new System.Drawing.Point(753, 761);
+            this.BillVtasTotal.Name = "BillVtasTotal";
+            this.BillVtasTotal.Size = new System.Drawing.Size(14, 16);
+            this.BillVtasTotal.TabIndex = 68;
+            this.BillVtasTotal.Text = "0";
             // 
-            // label7
+            // BillSumas
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(745, 729);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "Fecha";
+            this.BillSumas.AutoSize = true;
+            this.BillSumas.BackColor = System.Drawing.Color.Transparent;
+            this.BillSumas.Location = new System.Drawing.Point(754, 665);
+            this.BillSumas.Name = "BillSumas";
+            this.BillSumas.Size = new System.Drawing.Size(14, 16);
+            this.BillSumas.TabIndex = 66;
+            this.BillSumas.Text = "0";
+            this.BillSumas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // BillVtasExentas
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(753, 809);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 16);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "NIT";
+            this.BillVtasExentas.AutoSize = true;
+            this.BillVtasExentas.BackColor = System.Drawing.Color.Transparent;
+            this.BillVtasExentas.Location = new System.Drawing.Point(753, 745);
+            this.BillVtasExentas.Name = "BillVtasExentas";
+            this.BillVtasExentas.Size = new System.Drawing.Size(14, 16);
+            this.BillVtasExentas.TabIndex = 65;
+            this.BillVtasExentas.Text = "0";
             // 
-            // label9
+            // BillIVARetenido
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(750, 777);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 16);
-            this.label9.TabIndex = 64;
-            this.label9.Text = "Giro";
+            this.BillIVARetenido.AutoSize = true;
+            this.BillIVARetenido.BackColor = System.Drawing.Color.Transparent;
+            this.BillIVARetenido.Location = new System.Drawing.Point(753, 713);
+            this.BillIVARetenido.Name = "BillIVARetenido";
+            this.BillIVARetenido.Size = new System.Drawing.Size(14, 16);
+            this.BillIVARetenido.TabIndex = 64;
+            this.BillIVARetenido.Text = "0";
+            // 
+            // billTableProducts
+            // 
+            this.billTableProducts.ColumnCount = 6;
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 424F));
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.billTableProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.billTableProducts.Location = new System.Drawing.Point(7, 256);
+            this.billTableProducts.Name = "billTableProducts";
+            this.billTableProducts.RowCount = 1;
+            this.billTableProducts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.billTableProducts.Size = new System.Drawing.Size(802, 405);
+            this.billTableProducts.TabIndex = 70;
+            // 
+            // BillDescripcionTextbox
+            // 
+            this.BillDescripcionTextbox.AcceptsReturn = true;
+            this.BillDescripcionTextbox.Location = new System.Drawing.Point(837, 436);
+            this.BillDescripcionTextbox.Multiline = true;
+            this.BillDescripcionTextbox.Name = "BillDescripcionTextbox";
+            this.BillDescripcionTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.BillDescripcionTextbox.Size = new System.Drawing.Size(392, 178);
+            this.BillDescripcionTextbox.TabIndex = 80;
+            // 
+            // BillVentasExentasTextBox
+            // 
+            this.BillVentasExentasTextBox.Location = new System.Drawing.Point(835, 386);
+            this.BillVentasExentasTextBox.Name = "BillVentasExentasTextBox";
+            this.BillVentasExentasTextBox.Size = new System.Drawing.Size(100, 22);
+            this.BillVentasExentasTextBox.TabIndex = 79;
+            // 
+            // TittleDescripcion
+            // 
+            this.TittleDescripcion.AutoSize = true;
+            this.TittleDescripcion.Location = new System.Drawing.Point(837, 417);
+            this.TittleDescripcion.Name = "TittleDescripcion";
+            this.TittleDescripcion.Size = new System.Drawing.Size(79, 16);
+            this.TittleDescripcion.TabIndex = 78;
+            this.TittleDescripcion.Text = "Descripción";
+            // 
+            // TittleVentasExentasLabel
+            // 
+            this.TittleVentasExentasLabel.AutoSize = true;
+            this.TittleVentasExentasLabel.Location = new System.Drawing.Point(835, 367);
+            this.TittleVentasExentasLabel.Name = "TittleVentasExentasLabel";
+            this.TittleVentasExentasLabel.Size = new System.Drawing.Size(100, 16);
+            this.TittleVentasExentasLabel.TabIndex = 77;
+            this.TittleVentasExentasLabel.Text = "Ventas Exentas";
+            // 
+            // ventasNoSujetasLabel
+            // 
+            this.ventasNoSujetasLabel.AutoSize = true;
+            this.ventasNoSujetasLabel.Location = new System.Drawing.Point(1025, 295);
+            this.ventasNoSujetasLabel.Name = "ventasNoSujetasLabel";
+            this.ventasNoSujetasLabel.Size = new System.Drawing.Size(113, 16);
+            this.ventasNoSujetasLabel.TabIndex = 76;
+            this.ventasNoSujetasLabel.Text = "Ventas no sujetas";
+            // 
+            // BillVtasNoSujetasTextBox
+            // 
+            this.BillVtasNoSujetasTextBox.Location = new System.Drawing.Point(1028, 320);
+            this.BillVtasNoSujetasTextBox.Name = "BillVtasNoSujetasTextBox";
+            this.BillVtasNoSujetasTextBox.Size = new System.Drawing.Size(110, 22);
+            this.BillVtasNoSujetasTextBox.TabIndex = 75;
+            // 
+            // BillUnitPriceTextbox
+            // 
+            this.BillUnitPriceTextbox.Location = new System.Drawing.Point(917, 320);
+            this.BillUnitPriceTextbox.Name = "BillUnitPriceTextbox";
+            this.BillUnitPriceTextbox.Size = new System.Drawing.Size(92, 22);
+            this.BillUnitPriceTextbox.TabIndex = 74;
+            // 
+            // pUnitLabel
+            // 
+            this.pUnitLabel.AutoSize = true;
+            this.pUnitLabel.Location = new System.Drawing.Point(917, 295);
+            this.pUnitLabel.Name = "pUnitLabel";
+            this.pUnitLabel.Size = new System.Drawing.Size(92, 16);
+            this.pUnitLabel.TabIndex = 73;
+            this.pUnitLabel.Text = "Precio unitario";
+            // 
+            // billCantTextbox
+            // 
+            this.billCantTextbox.Location = new System.Drawing.Point(832, 320);
+            this.billCantTextbox.Name = "billCantTextbox";
+            this.billCantTextbox.Size = new System.Drawing.Size(61, 22);
+            this.billCantTextbox.TabIndex = 72;
+            // 
+            // tittleCantLabel
+            // 
+            this.tittleCantLabel.AutoSize = true;
+            this.tittleCantLabel.Location = new System.Drawing.Point(832, 295);
+            this.tittleCantLabel.Name = "tittleCantLabel";
+            this.tittleCantLabel.Size = new System.Drawing.Size(61, 16);
+            this.tittleCantLabel.TabIndex = 71;
+            this.tittleCantLabel.Text = "Cantidad";
+            // 
+            // bigBuyerRadioButton
+            // 
+            this.bigBuyerRadioButton.AutoSize = true;
+            this.bigBuyerRadioButton.Location = new System.Drawing.Point(840, 124);
+            this.bigBuyerRadioButton.Name = "bigBuyerRadioButton";
+            this.bigBuyerRadioButton.Size = new System.Drawing.Size(146, 20);
+            this.bigBuyerRadioButton.TabIndex = 81;
+            this.bigBuyerRadioButton.TabStop = true;
+            this.bigBuyerRadioButton.Text = "Contribuidor grande";
+            this.bigBuyerRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.ImprimirCréditoFiscal);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.BillNITclient);
+            this.panel1.Controls.Add(this.BillDateLabel);
+            this.panel1.Controls.Add(this.BillPayConditions);
+            this.panel1.Controls.Add(this.BillRegisterLabel);
+            this.panel1.Controls.Add(this.BillMunicipioLabel);
+            this.panel1.Controls.Add(this.BillClientLabel);
+            this.panel1.Controls.Add(this.BillDepartmentLabell);
+            this.panel1.Controls.Add(this.BillIVARetenido);
+            this.panel1.Controls.Add(this.BillVtasExentas);
+            this.panel1.Controls.Add(this.BillSumas);
+            this.panel1.Controls.Add(this.BillVtasTotal);
+            this.panel1.Controls.Add(this.billTableProducts);
+            this.panel1.Controls.Add(this.BillVtasNoSujetas);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(10, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(816, 1056);
+            this.panel1.TabIndex = 82;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 1055);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.FCDepartmentLabell);
-            this.Controls.Add(this.FCClientLabel);
-            this.Controls.Add(this.FCMunicipioLabel);
-            this.Controls.Add(this.FCRegisterLabel);
-            this.Controls.Add(this.FCPayConditions);
-            this.Controls.Add(this.FCDateLabel);
-            this.Controls.Add(this.FCNITclient);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bigBuyerRadioButton);
+            this.Controls.Add(this.BillDescripcionTextbox);
+            this.Controls.Add(this.BillVentasExentasTextBox);
+            this.Controls.Add(this.TittleDescripcion);
+            this.Controls.Add(this.TittleVentasExentasLabel);
+            this.Controls.Add(this.ventasNoSujetasLabel);
+            this.Controls.Add(this.BillVtasNoSujetasTextBox);
+            this.Controls.Add(this.BillUnitPriceTextbox);
+            this.Controls.Add(this.pUnitLabel);
+            this.Controls.Add(this.billCantTextbox);
+            this.Controls.Add(this.tittleCantLabel);
             this.Controls.Add(this.BillClientNameLabel);
             this.Controls.Add(this.BilldeleteRowButton);
             this.Controls.Add(this.BilladdRowButton);
@@ -300,11 +468,12 @@
             this.Controls.Add(this.BillDateFactureLabelPicker);
             this.Controls.Add(this.BillClientNameCmbx);
             this.Controls.Add(this.fiscalCreditCancelButton);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Factura";
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,17 +492,32 @@
         private System.Windows.Forms.DateTimePicker BillDateTimePicker;
         private System.Windows.Forms.Label BillDateFactureLabelPicker;
         private System.Windows.Forms.ComboBox BillClientNameCmbx;
-        private System.Windows.Forms.Label FCDepartmentLabell;
-        private System.Windows.Forms.Label FCClientLabel;
-        private System.Windows.Forms.Label FCMunicipioLabel;
-        private System.Windows.Forms.Label FCRegisterLabel;
-        private System.Windows.Forms.Label FCPayConditions;
-        private System.Windows.Forms.Label FCDateLabel;
-        private System.Windows.Forms.Label FCNITclient;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label BillDepartmentLabell;
+        private System.Windows.Forms.Label BillClientLabel;
+        private System.Windows.Forms.Label BillMunicipioLabel;
+        private System.Windows.Forms.Label BillRegisterLabel;
+        private System.Windows.Forms.Label BillPayConditions;
+        private System.Windows.Forms.Label BillDateLabel;
+        private System.Windows.Forms.Label BillNITclient;
+        private System.Windows.Forms.Label BillVtasNoSujetas;
+        private System.Windows.Forms.Label BillVtasTotal;
+        private System.Windows.Forms.Label BillSumas;
+        private System.Windows.Forms.Label BillVtasExentas;
+        private System.Windows.Forms.Label BillIVARetenido;
+        private System.Windows.Forms.TableLayoutPanel billTableProducts;
+        private System.Windows.Forms.TextBox BillDescripcionTextbox;
+        private System.Windows.Forms.TextBox BillVentasExentasTextBox;
+        private System.Windows.Forms.Label TittleDescripcion;
+        private System.Windows.Forms.Label TittleVentasExentasLabel;
+        private System.Windows.Forms.Label ventasNoSujetasLabel;
+        private System.Windows.Forms.TextBox BillVtasNoSujetasTextBox;
+        private System.Windows.Forms.TextBox BillUnitPriceTextbox;
+        private System.Windows.Forms.Label pUnitLabel;
+        private System.Windows.Forms.TextBox billCantTextbox;
+        private System.Windows.Forms.Label tittleCantLabel;
+        private System.Windows.Forms.RadioButton bigBuyerRadioButton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
